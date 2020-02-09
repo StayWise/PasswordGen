@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <children>
+      <Pane prefHeight="450.0" prefWidth="800.0" GridPane.columnIndex="1">
+         <children>
+            <Label layoutX="335.0" layoutY="28.0" prefHeight="31.0" prefWidth="161.0" text="PASSWORD" textAlignment="CENTER">
+               <font>
+                  <Font name="Monospaced Bold" size="32.0" />
+               </font>
+               <effect>
+                  <Bloom threshold="0.1" />
+               </effect>
+            </Label>
+            <Label layoutX="325.0" layoutY="67.0" prefHeight="11.0" prefWidth="182.0" text="GENERATOR">
+               <font>
+                  <Font name="Monospaced Bold" size="32.0" />
+               </font>
+               <effect>
+                  <Bloom threshold="0.1" />
+               </effect>
+            </Label>
+            <Slider fx:id="slider1" layoutX="346.0" layoutY="186.0" onMouseClicked="#dragged" onMouseDragged="#dragged" prefHeight="14.0" prefWidth="161.0" />
+            <Label layoutX="278.0" layoutY="185.0" prefHeight="17.0" prefWidth="68.0" text="Length: ">
+               <font>
+                  <Font name="Monospaced Regular" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="lengthbox1" layoutX="510.0" layoutY="181.0" onKeyPressed="#typed" prefHeight="25.0" prefWidth="42.0">
+               <font>
+                  <Font name="Monospaced Regular" size="12.0" />
+               </font>
+            </TextField>
+            <Button fx:id="generatebox" layoutX="351.0" layoutY="225.0" mnemonicParsing="false" onMouseClicked="#clicked" onMouseEntered="#hovered" onMouseExited="#out" prefHeight="29.0" prefWidth="130.0" text="Generate">
+               <font>
+                  <Font name="Monospaced Bold" size="16.0" />
+               </font>
+            </Button>
+            <CheckBox fx:id="checkbox1" layoutX="296.0" layoutY="137.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="78.0" text="Numbers">
+               <font>
+                  <Font name="Monospaced Regular" size="12.0" />
+               </font></CheckBox>
+            <CheckBox fx:id="checkbox2" layoutX="447.0" layoutY="137.0" mnemonicParsing="false" text="Special Characters">
+               <font>
+                  <Font name="Monospaced Regular" size="12.0" />
+               </font></CheckBox>
+            <ImageView fitHeight="100.0" fitWidth="114.0" layoutX="507.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="https://lh3.googleusercontent.com/proxy/FS9BiS8tNUkYStLdo3pIRTpGTXkhihstD6-IS3ngqbito_01qJwoT7HNrwNV2qzmLhPy0v5AuAyf6B0z3clV8kchpgG1lgbcsg" />
+               </image>
+               <effect>
+                  <Bloom threshold="0.0" />
+               </effect>
+            </ImageView>
+            <Label layoutX="12.0" layoutY="411.0" prefHeight="39.0" prefWidth="113.0" text="© 2020 Wise">
+               <effect>
+                  <Lighting bumpInput="$null">
+                     <light>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Label>
+         </children>
+         <effect>
+            <InnerShadow blurType="ONE_PASS_BOX" color="#030641" height="14.3" radius="6.5375" width="13.85" />
+         </effect>
+      </Pane>
+   </children>
+</GridPane>
