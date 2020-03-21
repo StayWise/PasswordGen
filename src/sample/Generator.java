@@ -90,7 +90,7 @@ public class Generator {
                 "<", ">", "/", ">"};
 
 
-        for(int i = 0; i < slider.getValue(); i++) {
+        for (int i = 0; i < slider.getValue(); i++) {
             if (!checkOne.isSelected() && !checkTwo.isSelected()) {
                 SB.append(none[rand.nextInt(none.length)]);
                 if (SB.length() == slider.getValue()) {
@@ -103,12 +103,12 @@ public class Generator {
                 }
             } else if (!checkOne.isSelected() && checkTwo.isSelected()) {
                 SB.append(optionTwo[rand.nextInt(optionTwo.length)]);
-                if(SB.length() == slider.getValue()){
+                if (SB.length() == slider.getValue()) {
                     break;
                 }
-            }else {
+            } else {
                 SB.append(all[rand.nextInt(all.length)]);
-                if(SB.length() == slider.getValue()){
+                if (SB.length() == slider.getValue()) {
                     break;
                 }
             }

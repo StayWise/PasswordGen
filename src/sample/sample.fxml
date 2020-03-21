@@ -29,7 +29,7 @@
    <children>
       <Pane prefHeight="450.0" prefWidth="800.0" GridPane.columnIndex="1">
          <children>
-            <Label layoutX="335.0" layoutY="28.0" prefHeight="31.0" prefWidth="161.0" text="PASSWORD" textAlignment="CENTER">
+            <Label layoutX="310.0" layoutY="41.0" prefHeight="31.0" prefWidth="161.0" text="PASSWORD" textAlignment="CENTER">
                <font>
                   <Font name="Monospaced Bold" size="32.0" />
                </font>
@@ -37,7 +37,7 @@
                   <Bloom threshold="0.1" />
                </effect>
             </Label>
-            <Label layoutX="325.0" layoutY="67.0" prefHeight="11.0" prefWidth="182.0" text="GENERATOR">
+            <Label layoutX="300.0" layoutY="80.0" prefHeight="11.0" prefWidth="182.0" text="GENERATOR">
                <font>
                   <Font name="Monospaced Bold" size="32.0" />
                </font>
@@ -45,38 +45,30 @@
                   <Bloom threshold="0.1" />
                </effect>
             </Label>
-            <Slider fx:id="slider1" layoutX="347.0" layoutY="230.0" onMouseClicked="#dragged" onMouseDragged="#dragged" prefHeight="14.0" prefWidth="161.0" />
-            <Label layoutX="279.0" layoutY="229.0" prefHeight="17.0" prefWidth="68.0" text="Length: ">
+            <Slider fx:id="lengthSlider" layoutX="338.0" layoutY="238.0" onMouseClicked="#sliderDragged" onMouseDragged="#sliderDragged" prefHeight="14.0" prefWidth="161.0" />
+            <Label layoutX="276.0" layoutY="237.0" prefHeight="17.0" prefWidth="69.0" text="Length: ">
                <font>
-                  <Font name="Monospaced Regular" size="12.0" />
+                  <Font name="Monospaced Bold" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="lengthbox1" layoutX="511.0" layoutY="225.0" onKeyPressed="#typed" prefHeight="25.0" prefWidth="42.0">
+            <TextField fx:id="lengthText" layoutX="502.0" layoutY="233.0" onKeyPressed="#lengthKeyPress" prefHeight="25.0" prefWidth="42.0">
                <font>
                   <Font name="Monospaced Regular" size="12.0" />
                </font>
             </TextField>
-            <Button fx:id="generatebox" layoutX="351.0" layoutY="274.0" mnemonicParsing="false" onMouseClicked="#clicked" onMouseEntered="#hovered" onMouseExited="#out" prefHeight="29.0" prefWidth="130.0" text="Generate">
+            <Button fx:id="generateButton" layoutX="272.0" layoutY="317.0" mnemonicParsing="false" onMouseClicked="#generateButtonClicked" onMouseEntered="#generateButtonEnter" onMouseExited="#generateButtonExit" prefHeight="29.0" prefWidth="130.0" text="Generate">
                <font>
                   <Font name="Monospaced Bold" size="16.0" />
                </font>
             </Button>
-            <CheckBox fx:id="checkbox1" layoutX="358.0" layoutY="142.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="78.0" text="Numbers">
+            <CheckBox fx:id="numberCheck" layoutX="328.0" layoutY="162.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="91.0" text="Numbers">
                <font>
-                  <Font name="Monospaced Regular" size="12.0" />
+                  <Font name="Monospaced Regular" size="13.0" />
                </font></CheckBox>
-            <CheckBox fx:id="checkbox2" layoutX="358.0" layoutY="180.0" mnemonicParsing="false" text="Special Characters">
+            <CheckBox fx:id="characterCheck" layoutX="328.0" layoutY="188.0" mnemonicParsing="false" text="Special Characters">
                <font>
-                  <Font name="Monospaced Regular" size="12.0" />
+                  <Font name="Monospaced Regular" size="13.0" />
                </font></CheckBox>
-            <ImageView fitHeight="100.0" fitWidth="114.0" layoutX="507.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="https://lh3.googleusercontent.com/proxy/FS9BiS8tNUkYStLdo3pIRTpGTXkhihstD6-IS3ngqbito_01qJwoT7HNrwNV2qzmLhPy0v5AuAyf6B0z3clV8kchpgG1lgbcsg" />
-               </image>
-               <effect>
-                  <Bloom threshold="0.0" />
-               </effect>
-            </ImageView>
             <Label layoutX="12.0" layoutY="411.0" prefHeight="39.0" prefWidth="113.0" text="© 2020 Wise">
                <effect>
                   <Lighting bumpInput="$null">
@@ -85,9 +77,114 @@
                   </Lighting>
                </effect>
             </Label>
+            <Button fx:id="retrieveButton" layoutX="421.0" layoutY="317.0" mnemonicParsing="false" onMouseClicked="#retrieveButtonClicked" onMouseEntered="#retrieveButtonEnter" onMouseExited="#retrieveButtonExit" prefHeight="29.0" prefWidth="130.0" text="Retrieve">
+               <font>
+                  <Font name="Monospaced Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="viewAllButton" layoutX="272.0" layoutY="366.0" mnemonicParsing="false" onMouseClicked="#viewAllButtonClicked" onMouseEntered="#viewAllButtonEnter" onMouseExited="#viewAllButtonExit" prefHeight="29.0" prefWidth="130.0" text="View All">
+               <font>
+                  <Font name="Monospaced Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="removeButton" layoutX="421.0" layoutY="366.0" mnemonicParsing="false" onMouseClicked="#removeButtonClicked" onMouseEntered="#removeButtonEnter" onMouseExited="#removeButtonExit" prefHeight="29.0" prefWidth="130.0" text="Remove">
+               <font>
+                  <Font name="Monospaced Bold" size="17.0" />
+               </font>
+            </Button>
+            <TextField fx:id="keyText" layoutX="325.0" layoutY="275.0" prefHeight="25.0" prefWidth="170.0">
+               <font>
+                  <Font name="Monospaced Regular" size="12.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="91.0" fitWidth="92.0" layoutX="481.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="https://image.flaticon.com/icons/png/512/52/52840.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="289.0" layoutY="279.0" prefHeight="17.0" prefWidth="34.0" text="Key:">
+               <font>
+                  <Font name="Monospaced Bold" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="251.0" layoutY="20.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" rotate="23.2">
+               <image>
+                  <Image url="https://png.pngtree.com/svg/20170918/234f51ec9c.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="189.0" layoutY="349.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" rotate="17.2">
+               <image>
+                  <Image url="https://png.pngtree.com/svg/20170918/234f51ec9c.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="251.0" layoutY="176.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" rotate="-25.0">
+               <image>
+                  <Image url="https://png.pngtree.com/svg/20170918/234f51ec9c.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="104.0" layoutY="20.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" rotate="-35.5">
+               <image>
+                  <Image url="https://png.pngtree.com/svg/20170918/234f51ec9c.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="27.0" layoutY="150.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" rotate="24.1">
+               <image>
+                  <Image url="https://png.pngtree.com/svg/20170918/234f51ec9c.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="626.0" layoutY="176.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" rotate="-25.7">
+               <image>
+                  <Image url="https://png.pngtree.com/svg/20170918/234f51ec9c.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="502.0" layoutY="129.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" rotate="36.5">
+               <image>
+                  <Image url="https://png.pngtree.com/svg/20170918/234f51ec9c.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="674.0" layoutY="361.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" rotate="-35.5">
+               <image>
+                  <Image url="https://png.pngtree.com/svg/20170918/234f51ec9c.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="728.0" layoutY="98.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" rotate="40.2">
+               <image>
+                  <Image url="https://png.pngtree.com/svg/20170918/234f51ec9c.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="147.0" layoutY="246.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" rotate="34.2">
+               <image>
+                  <Image url="https://png.pngtree.com/svg/20170918/234f51ec9c.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="572.0" layoutY="275.0" opacity="0.1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="https://png.pngtree.com/svg/20170918/234f51ec9c.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="48.0" layoutY="328.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" rotate="-26.0">
+               <image>
+                  <Image url="https://png.pngtree.com/svg/20170918/234f51ec9c.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="147.0" layoutY="122.0" opacity="0.1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="https://png.pngtree.com/svg/20170918/234f51ec9c.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="717.0" layoutY="254.0" opacity="0.1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="https://png.pngtree.com/svg/20170918/234f51ec9c.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="619.0" layoutY="40.0" opacity="0.1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="https://png.pngtree.com/svg/20170918/234f51ec9c.png" />
+               </image>
+            </ImageView>
          </children>
          <effect>
-            <InnerShadow blurType="ONE_PASS_BOX" color="#030641" height="14.3" radius="6.5375" width="13.85" />
+            <InnerShadow blurType="ONE_PASS_BOX" height="14.08" radius="6.4825" width="13.85" />
          </effect>
       </Pane>
    </children>
