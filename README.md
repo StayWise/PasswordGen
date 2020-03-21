@@ -12,4 +12,4 @@ PasswordGenerator
 
 -When you open it, you will be prompted with a security check, put any 16 characters or less you want and make sure you remember that to access your password data! This adds some extra protection with java's encryption and decryption methods!
 
-![Image of the GUI](https://i.imgur.com/t4ziwX8.png)
+![Image of the GUI](https://i.imgur.com/rLdidY2.png)
